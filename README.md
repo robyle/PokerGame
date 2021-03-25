@@ -46,21 +46,21 @@
             InitGame(out Step, out flgEnd);//初始化游戏
             do
             {
-                    ShowGameStatus();//输出显示游戏状态
-                    try
-                    {
-                    int[] LineNum = new int[2];
-                    Console.WriteLine($"\r\n请 角色[{Step % 2}] 输入【两整数空格进行区分】：行数 数量");//0 1 两个角色
-                    ///TODO:此处可以进人机角色改造 可以设定为人人对战模式，也可以人机模式 
-                    string[] sr = Console.ReadLine().Split(' ');
-                    LineNum[0] = int.Parse(sr[0]);
-                    LineNum[1] = int.Parse(sr[1]);
-                    DealInput(ref Step, ref flgEnd, LineNum);
-                    }
-                    catch (System.Exception ex)
-                    {
-                    TipsOutput($"输入异常：{ex.Message}\r\n"+"提示,请输入【两整数空格进行区分】：行数 数量");
-                    }
+                ShowGameStatus();//输出显示游戏状态
+                try
+                {
+                   int[] LineNum = new int[2];
+                   Console.WriteLine($"\r\n请 角色[{Step % 2}] 输入【两整数空格进行区分】：行数 数量");//0 1 两个角色
+                   ///TODO:此处可以进人机角色改造 可以设定为人人对战模式，也可以人机模式 
+                   string[] sr = Console.ReadLine().Split(' ');
+                   LineNum[0] = int.Parse(sr[0]);
+                   LineNum[1] = int.Parse(sr[1]);
+                   DealInput(ref Step, ref flgEnd, LineNum);
+                }
+                catch (System.Exception ex)
+                {
+                   TipsOutput($"输入异常：{ex.Message}\r\n"+"提示,请输入【两整数空格进行区分】：行数 数量");
+                }
             } while (!flgEnd);
             Console.WriteLine("游戏结束!   任意键继续....  Ctrl+C 退出.\r\n------------------------------------------");
             Console.ReadKey();
