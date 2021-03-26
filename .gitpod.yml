@@ -1,6 +1,5 @@
-image:
-  file: .gitpod.Dockerfile
+image: gitpod/workspace-dotnet
 
 tasks:
-  - init: 'echo "TODO: Replace with init/build command"'
-    command: ls
+  - init: dotnet build
+    command: dotnet run
